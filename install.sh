@@ -4,4 +4,4 @@ php bin/console cache:clear && bin/console cache:warmup
 php bin/console d:d:c --if-not-exists
 php bin/console d:m:m -n
 
-php bin/console create:note
+#php bin/console create:note

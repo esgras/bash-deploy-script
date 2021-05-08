@@ -2,7 +2,6 @@
 
 namespace App\Command;
 
-use App\DataFixtures\NoteFixtures;
 use App\Dto\CreateNoteDto;
 use App\Service\NoteService;
 use Symfony\Component\Console\Command\Command;
@@ -31,12 +30,17 @@ class CreateNotesCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        foreach (NoteFixtures::NOTES as $noteName) {
+        foreach (self::getNotes() as $noteName) {
             $this->noteService->create(new CreateNoteDto($noteName));
         }
 
         $io->success('You have successfully add new notes to database.');
 
         return Command::SUCCESS;
+    }
+
+    private function getNotes(): array
+    {
+        return ['First note', 'Second note', 'Third note', 'Fourth note', 'Fifth note'];
     }
 }

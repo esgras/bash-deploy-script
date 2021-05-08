@@ -9,7 +9,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class NoteFixtures extends Fixture
 {
-    public const NOTES = ['First note', 'Second note', 'Third note', 'Fourth note', 'Fifth note'];
+    private const NOTES = ['First note', 'Second note', 'Third note', 'Fourth note', 'Fifth note'];
     private NoteService $noteService;
 
     public function __construct(NoteService $noteService)

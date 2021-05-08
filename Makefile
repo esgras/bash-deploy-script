@@ -6,7 +6,7 @@ deploy-standard:
 	@php bin/console d:m:m -n
 
 deploy-custom:
-#	@php bin/console create:note
+	@php bin/console create:note
 
 deploy: deploy-standard deploy-custom
 
